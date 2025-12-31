@@ -1,0 +1,112 @@
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:black;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:380px;
+    height:680px;
+    background:#000;
+    color:white;
+    text-align:center;
+    border-radius:22px;
+    padding:25px;
+    position:relative;
+    z-index:5;
+    box-shadow:0 0 25px rgba(255,255,255,.4);
+}
+
+
+/* Título principal */
+.titulo{
+    font-size:45px;
+    font-weight:700;
+    color:white;
+    text-shadow:0 0 8px gold;
+    margin-top:15px;
+}
+
+/* Caja del año */
+.year-box{
+    font-size:50px;
+    font-weight:800;
+    color:#000;
+    background:#ffd700;
+    padding:12px 20px;
+    width:200px;
+    margin:20px auto;
+    border-radius:15px;
+    box-shadow:0 0 12px gold;
+    border:3px solid white;
+    text-shadow:0 0 5px #fff;
+}
+
+/* Texto del mensaje */
+.mensaje{
+    font-size:20px;
+    margin-top:25px;
+    line-height:28px;
+    font-weight:400;
+}
+
+/* Dedicatoria */
+.dedicatoria{
+    margin-top:40px;
+    font-size:38px;
+    font-weight:700;
+    color:gold;
+    text-shadow:0 0 10px gold;
+}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:8px;
+    height:8px;
+    background:gold;
+    top:-10px;
+    border-radius:50%;
+    animation:drop linear forwards;
+}
+
+@keyframes drop{
+    to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* Fuegos artificiales */
+#fireworks{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index:1;
+}
+
+/* EFECTO DE EXPLOSIÓN CIRCULAR REALISTA */
+.firework{
+    position:absolute;
+    width:4px; height:4px;
+    background:#ffd700;
+    border-radius:50%;
+    box-shadow:0 0 12px gold,0 0 25px rgba(255,215,0,.8);
+    animation:firepop 1.4s ease-out forwards;
+}
+
+@keyframes firepop{
+    0%{
+        transform:scale(1) translate(0,0);
+        opacity:1;
+    }
+    70%{
+        opacity:1;
+    }
+    100%{
+        transform:translate(var(--tx),var(--ty)) scale(0.2);
+        opacity:0;
+    }
+}
